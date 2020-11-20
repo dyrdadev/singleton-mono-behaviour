@@ -78,10 +78,6 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : Single
                         $"'{typeof(T)}' is destroyed. This may be because the application has already been closed. Therefore no new object is created. Returning null.");
                     return null;
                 }
-
-                WarnMessage(
-                    $"Something went wrong. Returning null.");
-                return null;
             }
         }
         private set
