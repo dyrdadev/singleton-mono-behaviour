@@ -9,16 +9,25 @@ jobs:
     name: Deploy to UPM
     runs-on: ubuntu-latest
     env:
-        PKG_ROOT: Packages/io.dyrda.package-template
+        PKG_ROOT: Packages/io.dyrda.singleton-mono-behaviour
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0   
-    - name: copy master readme to temp
+    - name: copy master files to temp
       run: |
         mkdir temp
         cp README.md temp/
         cp README.md.meta temp/
+        
+        cp CHANGELOG.md temp/
+        cp CHANGELOG.md.meta temp/
+        
+        cp LICENSE.md temp/
+        cp LICENSE.md.meta temp/
+        
+        cp ThirdPartyNotice.md temp/
+        cp ThirdPartyNotice.md.meta temp/
     - name: split upm-raw branch
       run: |
         git subtree split -P "$PKG_ROOT" -b upm-raw
@@ -29,25 +38,44 @@ jobs:
         git push origin --delete upm
         git checkout -b upm upm-raw
         git push origin upm
-    - name: overwrite package readme with current master readme
+    - name: overwrite package files with current master files
       run: |  
         # echo "WHATioo" >> temp/README.md
         cat temp/README.md > README.md
         cat temp/README.md.meta > README.md.meta
-    - name: prepare readme commit
+        
+        cat temp/CHANGELOG.md > CHANGELOG.md
+        cat temp/CHANGELOG.md.meta > CHANGELOG.md.meta
+        
+        cat temp/LICENSE.md > LICENSE.md
+        cat temp/LICENSE.md.meta > LICENSE.md.meta
+        
+        cat temp/ThirdPartyNotice.md > ThirdPartyNotice.md
+        cat temp/ThirdPartyNotice.md.meta > ThirdPartyNotice.md.meta
+    - name: prepare files commit
       run: |
         # Remove temp
         sudo rm -r -f temp/
         # Set necessary information
         git config --local user.email "github-action@dyrda.io" 
         git config --local user.name "github-action"
-    - name: optional readme commit
+    - name: optional files commit
       run: |
         git add "README.md"
         git add "README.md.meta" 
-        git commit -m"Automatically copied the original README file to the upm package.";
+        
+        git add "CHANGELOG.md"
+        git add "CHANGELOG.md.meta"
+        
+        git add "LICENSE.md"
+        git add "LICENSE.md.meta" 
+        
+        git add "ThirdPartyNotice.md"
+        git add "ThirdPartyNotice.md.meta" 
+        
+        git commit -m"Automatically copied the original REPO files (README, CHANGELOG, LICENSE and ThirdPartyNotice) to the upm package.";
         # if [[ $(git diff --exit-code README.md) ]]; then
-        # git add "README.md" && git commit -m"Automatically copied the original README file to the upm package.";
+        # git add "README.md" && git commit -m"Automatically copied the original REPO files (README, CHANGELOG, LICENSE and ThirdPartyNotice) to the upm package.";
         # fi
     - name: push upm branch
       run: |  
