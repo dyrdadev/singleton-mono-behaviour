@@ -91,6 +91,7 @@ namespace DyrdaIo
             private static void LogMessage(string message)
             {
                 Debug.LogFormat($"{messagePrefix}{message}{messageSuffix}");
+
             }
 
             private static void WarnMessage(string message)
