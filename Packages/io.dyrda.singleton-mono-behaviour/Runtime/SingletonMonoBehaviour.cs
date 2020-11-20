@@ -54,14 +54,12 @@ namespace DyrdaIo
                             InitializeInstance();
                             return instance;
                         }
-
-                        WarnMessage(
-                            $"'{typeof(T)}' is destroyed. This may be because the application has already been closed. Therefore no new object is created. Returning null.");
-                        return null;
-
-                        WarnMessage(
-                            "Something went wrong. Returning null.");
-                        return null;
+                        else
+                        {
+                            WarnMessage(
+                                $"'{typeof(T)}' is destroyed. This may be because the application has already been closed. Therefore no new object is created. Returning null.");
+                            return null;
+                        }
                     }
                 }
                 private set
