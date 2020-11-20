@@ -1,5 +1,5 @@
 {
-  "name": "io.dyrda.singleton-mono-behaviour",
+  "name": "io.dyrda.singleton.singleton-mono-behaviour",
   "version": "0.0.1",
   "displayName": "Singleton Mono Behaviour",
   "description": "Another Singleton MonoBehaviour implementation for Unity. ",
