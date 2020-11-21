@@ -9,7 +9,7 @@ jobs:
     name: Deploy to UPM
     runs-on: ubuntu-latest
     env:
-        PKG_ROOT: Packages/io.dyrda.singleton-mono-behaviour
+        PKG_ROOT: Packages/io.dyrda.singleton.singleton-mono-behaviour
     steps:
     - uses: actions/checkout@v2
       with:
