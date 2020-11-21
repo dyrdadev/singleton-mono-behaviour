@@ -7,6 +7,31 @@ namespace DyrdaIo
         [DisallowMultipleComponent]
         public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
         {
+            #region Settings
+
+            /// <summary>
+            ///     Should we wait with finding the correct instance until a script tries to access it? If set to false, we load the
+            ///     instance on Awake.
+            /// </summary>
+            public static bool loadLazy = false;
+
+            /// <summary>
+            ///     If true, we create a new object if there is no instance in the scene.
+            /// </summary>
+            public static bool createInstanceIfNotPresent = true;
+
+            /// <summary>
+            ///     If true, we also consider inactive elements in the scene when we search for an instance.
+            /// </summary>
+            public static bool considerInactive = false;
+
+            /// <summary>
+            ///     If true, we do not destroy the instance on scene loads.
+            /// </summary>
+            public static bool persistOnSceneLoad = true;
+
+            #endregion
+            
             private const string messagePrefix = "<b>— SingletonMonoBehaviour:</b> ";
             private const string messageSuffix = "\n";
 
@@ -62,7 +87,7 @@ namespace DyrdaIo
                         }
                     }
                 }
-                private set
+                protected set
                 {
                     instance = value;
                     instantiated = true;
@@ -162,7 +187,9 @@ namespace DyrdaIo
             private void Awake()
             {
                 if (loadLazy)
+                {
                     return;
+                }
                 lock (instanceLock)
                 {
                     if (instantiated == false)
@@ -190,31 +217,6 @@ namespace DyrdaIo
                     instanceDestroyed = true;
                 }
             }
-
-            #region Settings
-
-            /// <summary>
-            ///     Should we wait with finding the correct instance until a script tries to access it? If set to false, we load the
-            ///     instance on Awake.
-            /// </summary>
-            public static bool loadLazy = false;
-
-            /// <summary>
-            ///     If true, we create a new object if there is no instance in the scene.
-            /// </summary>
-            public static bool createInstanceIfNotPresent = true;
-
-            /// <summary>
-            ///     If true, we also consider inactive elements in the scene when we search for an instance.
-            /// </summary>
-            public static bool considerInactive = false;
-
-            /// <summary>
-            ///     If true, we do not destroy the instance on scene loads.
-            /// </summary>
-            public static bool persistOnSceneLoad = true;
-
-            #endregion
         }
     }
 }
