@@ -4,10 +4,15 @@
 
 > 🧪 **EXPERIMENTAL** This project is experimental. It is still under development. It may be unstable. It is not optimized and largely untested . Do **not** use this project in critical projects. 
 
-This package provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances. Thus, we work with concrete ```MonoBehaviour``` component instances on ```GameObjects``` in the scene. As ```MonoBehaviour```, the derived classes have access to all Unity lifecycle methods.
+This package for Unity provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances: the ```SingletonMonoBehaviour``` class. This means we work with concrete ```MonoBehaviour``` components on objects in the scene – as a singleton. 
+
+**A short comment of Daniel on the Singleton pattern:** At this point we do not want to enter into the discussion about whether the Singleton pattern is good or bad. Probably the answer will be: neither, anyway. It lies somewhere in between. Whether it is more good or more bad depends on the concrete use case.This should be evaluated by yourself from case to case. This question simply cannot be answered generally, because it always depends on the concrete use. So don't get discouraged if somebody says that singletons are an antipattern. In this radical statement, I do not think this is true. I know many situations in which a Singleton offers a beautiful solution. At the same time, however, it is correct that one can easily slip into a supoptimal code structure. So use the pattern very consciously and be aware of the consequences. Make yourself fully aware of what you are doing. If you are unsure, a singleton probably leads to suboptimal code structures.
+If you are looking for a good alternative to Singletons, "Dependency Injection" seems to be a good approach. There are some solution appraoches of "Dependency Injection" available for Unity.
 
 ## Features
 
+#### Lifecycle Methods
+```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This menas, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity life cycle methods.
 #### Performance
 Every access to the current instance requires some checks. These checks are a bottleneck because they are executed every time any piece of code accesses the singleton. Our implementation uses a flag to check if an instance already exists. This is better performing than a common approach used in many implementations based on the == operators. (Because Unity overloads the ==-operator and it is quite slow).
 #### Thread Safety
