@@ -1,6 +1,6 @@
 # Singleton Mono Behaviour
 
-Another Singleton MonoBehaviour implementation for Unity. 
+Another Singleton ```MonoBehaviour``` implementation for Unity. 
 
 > 🧪 **EXPERIMENTAL** This project is experimental. It is still under development. It may be unstable. It is not optimized and largely untested . Do **not** use this project in critical projects. 
 
