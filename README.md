@@ -55,7 +55,7 @@ When looking for instances in the scene, we can include inactive objects or igno
 #### Lazy load
 With the ```Singleton-MonoBehaviour``` we work with ```GameObjects``` in the scene. So we have to find the one instance that is our current singleton instance. With the property ```loadLazy``` you can decide whether we should find the correct instance at ```Awake``` or later on demand when a script tries to access the instance. If ```loadLazy``` is true, we wait to find the instance until a script tries to access the instance. The default value for ```loadLazy``` is ```false```. You can set the static field ```createInstanceIfNotPresent``` in the implementation of your concrete ```SingletonMonoBehaviour``` class so that everything behaves according to your requirements.
 
-## Install the package
+## Install the Package
 
 You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Just add a new package with the git HTTPS URL to the "UPM" branch of this repository: https://github.com/Zughiko/singleton-mono-behaviour.git#upm
 
