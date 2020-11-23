@@ -17,9 +17,7 @@ You have a class that currently inherits from ```MonoBehaviour``` and you want i
 2. **Implementation of the concrete Singelton:** Let the class in question inherit from ```SingletonMonoBehaviour<T>``` instead of ```MonoBehaviour```. ```T``` is the type of your original class in question that will be the concrete ```SingletonMonoBehaviour```.
 3. **Accessing the Singleton from everywhere:** Done. Now you can access the Singleton via the ```Instance``` member of the concrete Singleton class.
 
-### Example
-
-Here is an example for a ```GameData``` class with a ```score``` member as SingeltonMonoBehaviour.
+**Example:** Here is an example for a ```GameData``` class with a ```score``` member as SingeltonMonoBehaviour.
 The preparation and implementation of a ```MonoBehaviour``` as Singleton:
 
 ```
