@@ -11,6 +11,8 @@ If you are looking for a good alternative to Singletons, "Dependency Injection" 
 
 ## Features
 
+Our Singleton implementation offers the following features:
+
 #### Lifecycle Methods
 ```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This menas, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity life cycle methods.
 #### Performance
