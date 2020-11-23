@@ -1,10 +1,8 @@
 # Singleton Mono Behaviour
 
-Another Singleton ```MonoBehaviour``` implementation for Unity. 
+> Another Singleton ```MonoBehaviour``` implementation for Unity. 
 
 > 🧪 **EXPERIMENTAL** This project is experimental. It is still under development. It may be unstable. It is not optimized and largely untested . Do **not** use this project in critical projects. 
-
-## Introduction
 
 This package provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances. Thus, we work with concrete ```MonoBehaviour``` component instances on ```GameObjects``` in the scene. As ```MonoBehaviour```, the derived classes have access to all Unity lifecycle methods.
 
