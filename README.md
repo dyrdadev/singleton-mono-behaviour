@@ -37,8 +37,8 @@ Now, you can access the ```score``` member via ```GameData.Instance.score```
 
 Our Singleton implementation offers the following features:
 
-#### Lifecycle Methods
-```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This menas, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity life cycle methods.
+#### Event Functions
+```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This menas, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity event functions such as ```Awake```, ```Start```, ```Update``` or ```FixedUpdate```.
 #### Performance
 Every access to the current instance requires some checks. These checks are a bottleneck because they are executed every time any piece of code accesses the singleton. Our implementation uses a flag to check if an instance already exists. This is better performing than a common approach used in many implementations based on the == operators. (Because Unity overloads the ==-operator and it is quite slow).
 #### Thread Safety
