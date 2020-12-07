@@ -26,8 +26,8 @@ jobs:
         cp LICENSE.md temp/
         cp LICENSE.md.meta temp/
         
-        cp ThirdPartyNotice.md temp/
-        cp ThirdPartyNotice.md.meta temp/
+        cp ThirdPartyContent.md temp/
+        cp ThirdPartyContent.md.meta temp/
     - name: split upm-raw branch
       run: |
         git subtree split -P "$PKG_ROOT" -b upm-raw
@@ -50,8 +50,8 @@ jobs:
         cat temp/LICENSE.md > LICENSE.md
         cat temp/LICENSE.md.meta > LICENSE.md.meta
         
-        cat temp/ThirdPartyNotice.md > ThirdPartyNotice.md
-        cat temp/ThirdPartyNotice.md.meta > ThirdPartyNotice.md.meta
+        cat temp/ThirdPartyContent.md > ThirdPartyContent.md
+        cat temp/ThirdPartyContent.md.meta > ThirdPartyContent.md.meta
     - name: prepare files commit
       run: |
         # Remove temp
@@ -70,8 +70,8 @@ jobs:
         git add "LICENSE.md"
         git add "LICENSE.md.meta" 
         
-        git add "ThirdPartyNotice.md"
-        git add "ThirdPartyNotice.md.meta" 
+        git add "ThirdPartyContent.md"
+        git add "ThirdPartyContent.md.meta" 
         
         git commit -m"Automatically copied the original REPO files (README, CHANGELOG, LICENSE and ThirdPartyNotice) to the upm package.";
         # if [[ $(git diff --exit-code README.md) ]]; then
