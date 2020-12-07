@@ -56,7 +56,7 @@ With the ```Singleton-MonoBehaviour``` we work with ```GameObjects``` in the sce
 
 ## Install the Package
 
-You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Just add a new package with the git HTTPS URL to the "UPM" branch of this repository: https://github.com/Zughiko/singleton-mono-behaviour.git#upm
+You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Simply add a new package with the git-HTTPS URL to the version you want to install in the form "https://github.com/Zughiko/singleton-mono-behaviour.git#{version}", where {version} is the actual version you want to install. For example, if you want to install version "0.0.2" of this package, you can refer to https://github.com/Zughiko/singleton-mono-behaviour.git#0.0.2.
 
 You can do this by using the Package Manager window or the manifest.json directly:
 
