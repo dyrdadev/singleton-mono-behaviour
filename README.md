@@ -67,6 +67,10 @@ You can do this by using the Package Manager window or the manifest.json directl
 
 This package is licensed under a MIT license. See the [LICENSE](/LICENSE) file for details.
 
-## Support & Contribution
+## Support
 
-This project was created by [Daniel Dyrda](https://dyrda.io). If you want to support me and my projects, you can follow me on [github (zughiko)](https://github.com/Zughiko) and [twitter (@zughiko)](https://twitter.com/Zughiko). If you want to contribute to this project, you are welcome to do so.
+This project was created by [Daniel Dyrda](https://dyrda.io). If you want to support me and my projects, you can follow me on [github (zughiko)](https://github.com/Zughiko) and [twitter (@zughiko)](https://twitter.com/Zughiko). Just come by and say hello, I would love to hear how you use the project.
+
+## Contribute
+
+This project was developed by [Daniel Dyrda](https://dyrda.io). If you want to contribute to this project, you are welcome to do so. Just write me and we will find a way to collaborate.
