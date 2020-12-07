@@ -62,4 +62,11 @@ You can do this by using the Package Manager window or the manifest.json directl
 
 1. **Installing from a Git URL using the Package Manager window.** Open the Package Manager window. Click "+", then "Add package from git URL" and enter the git URL from above. You can find more information [here](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
 2. **Installing from a Git URL using the manifest.json.** You can add a new entry to the manifest.json file in the ``Packages`` folder of your unity project: ```"io.dyrda.singleton.singleton-mono-behaviour": "https://github.com/Zughiko/singleton-mono-behaviour.git#upm"```. You can find more information [here](https://docs.unity3d.com/Manual/upm-git.html).
- 
+
+## License
+
+This package is licensed under a MIT license. See the [LICENSE](/LICENSE) file for details.
+
+## Support & Contribution
+
+This project was created by [Daniel Dyrda](https://dyrda.io). If you want to support me and my projects, you can follow me on [github (zughiko)](https://github.com/Zughiko) and [twitter (@zughiko)](https://twitter.com/Zughiko). If you want to contribute to this project, you are welcome to do so.
