@@ -69,7 +69,7 @@ This package is licensed under a MIT license. See the [LICENSE](/LICENSE) file f
 
 ## Support
 
-This project was created by [Daniel Dyrda](https://dyrda.io). If you want to support me and my projects, you can follow me on [github (zughiko)](https://github.com/Zughiko) and [twitter (@zughiko)](https://twitter.com/Zughiko). Just come by and say hello, I would love to hear how you use the project.
+This project was created by [Daniel Dyrda](https://dyrda.io). If you want to support me and my projects, you can follow me on [github (zughiko)](https://github.com/dyrdaio) and [twitter (@zughiko)](https://twitter.com/dyrdaio). Just come by and say hello, I would love to hear how you use the project.
 
 ## Contribute
 
