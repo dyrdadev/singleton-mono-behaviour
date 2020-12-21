@@ -4,20 +4,19 @@
 
 > 🧪 **EXPERIMENTAL** This project is experimental. It is still under development. It may be unstable. It is not optimized and largely untested . Do **not** use this project in critical projects. 
 
-This package for Unity provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances: the ```SingletonMonoBehaviour``` class. This means we work with concrete ```MonoBehaviour``` components on objects in the scene – as a singleton. 
+This package for Unity provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances. The package introduces the ```SingletonMonoBehaviour``` class. With this class we can create concrete ```MonoBehaviour``` components that can be added to game objects in the scene and behave in the same way as classic ```MonoBehaviour``` components – just as a singleton. 
 
-> 💭 **A short comment of Daniel on the Singleton pattern:** At this point we do not want to enter the discussion about whether the Singleton pattern is good or bad. Probably the answer will be: neither, anyway. It lies somewhere in between. Whether it is more good than bad, or vice versa, depends on the concrete use case. This should be evaluated by yourself on a case-by-case basis. So don't get discouraged if somebody says that Singleton is an antipattern. In this radical statement, I do not think this is true. I know many situations in which a Singleton offers a beautiful solution. At the same time, however, it is true that one can easily drift into a suboptimal code structure. So use the pattern very consciously and be aware of the consequences. Make yourself fully aware of what you are doing. If you are unsure, a singleton will probably lead to suboptimal code. If you are looking for a good alternative to Singletons, **"Dependency Injection"** seems to be a good approach. There are some solution approaches of "Dependency Injection" available for Unity.
+> 💭 **A short comment of Daniel on the Singleton pattern:** At this point we do not want to enter the discussion about whether the Singleton pattern is good or bad. Probably the answer will be: neither, anyway. It lies somewhere in between. Whether it is more good than bad, or vice versa, depends on the concrete use case. This should be evaluated on a case-by-case basis. So don't get discouraged if somebody says that Singleton is an antipattern. In this radical statement, I do not think this is true. I know many situations in which a Singleton offers a beautiful solution. At the same time, however, it is true that one can easily drift into a suboptimal code structure. So use the pattern very consciously and be aware of the consequences. Make yourself fully aware of what you are doing. If you are unsure, a singleton will probably lead to suboptimal code. If you are looking for a good alternative to Singletons, **"Dependency Injection"** seems to be a good approach. There are some solution approaches of "Dependency Injection" available for Unity.
 
 ## Quick Start
 
-You have a class that currently inherits from ```MonoBehaviour``` and you want it to be a Singleton, then just follow these steps:
+You have a class that currently inherits from ```MonoBehaviour``` and you want it to be a Singleton. Then follow these steps:
 
-1. **Preparation:** Include the using directive to the ```SingletonMonoBehaviour``` class in your script: ```using DyrdaIo.Singleton;```.
-2. **Implementation of the concrete Singleton:** Let the class in question inherit from ```SingletonMonoBehaviour<T>``` instead of ```MonoBehaviour```. ```T``` is the type of your original class in question that will be the concrete ```SingletonMonoBehaviour```.
-3. **Accessing the Singleton from everywhere:** Done. Now you can access the Singleton via the ```Instance``` member of the concrete Singleton class.
+1. **Preparation:** To use the class ```SingletonMonoBehaviour``` in your script, you have to include the "DyrdaIo.Singleton" using directive. At the beginning of your script, insert the following line: ```using DyrdaIo.Singleton;```.
+2. **Implementation of the concrete Singleton:** Open the script of the class which should be a singleton. Change the superclass from which the class in question inherits from ```MonoBehaviour``` to ```SingletonMonoBehaviour<T>```. ```T``` is the type of your original class in question that will be the concrete ```SingletonMonoBehaviour```.
+3. **Accessing the Singleton from everywhere:** Done. Now you can access the Singleton via the ```Instance``` property of the concrete Singleton class.
 
-**Example:** Here is an example for a ```GameData``` class with a ```score``` member as ```SingletonMonoBehaviour```.
-The preparation and implementation of a ```MonoBehaviour``` as Singleton:
+**Example:** Here is an example for a ```GameData``` class with a ```Score``` property. The ```GameData``` class is supposed to be a singleton.  The result of the steps as described above looks like this:
 
 ```
 using UnityEngine;
@@ -25,13 +24,13 @@ using DyrdaIo.Singleton;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
-   public int score;
+   public int Score;
    
    // Remaining implementation of the class.
 }
 ```
 
-Now, you can access the ```score``` member via ```GameData.Instance.score```
+Now, you can access the ```Score``` property via ```GameData.Instance.Score``` from any script in your project that has access to the ```GameData``` class.
 
 ## Features
 
