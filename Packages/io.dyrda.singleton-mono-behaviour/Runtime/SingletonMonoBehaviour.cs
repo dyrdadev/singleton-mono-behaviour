@@ -11,9 +11,7 @@ namespace DyrdaIo
         [DisallowMultipleComponent]
         public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
         {
-            #region Properties
-
-            #region Settings
+            #region Configuration
 
             /// <summary>
             /// Should we wait with finding the correct instance until a script tries to access it? If set to false,
@@ -38,7 +36,7 @@ namespace DyrdaIo
 
             #endregion
 
-            #region Private Properties
+            #region Internal
 
             private const string MessagePrefix = "<b>— SingletonMonoBehaviour:</b> ";
             private const string MessageSuffix = "\n";
@@ -70,12 +68,6 @@ namespace DyrdaIo
 
             #endregion
 
-            #endregion
-
-            #region utility
-
-            #region Log Methods
-
             /// <summary>
             /// Log wrapper for all debug logs of this class.
             /// </summary>
@@ -93,12 +85,6 @@ namespace DyrdaIo
             {
                 Debug.LogWarningFormat($"{MessagePrefix}{message}{MessageSuffix}");
             }
-
-            #endregion
-
-            #endregion
-
-            #region Instance
 
             /// <summary>
             /// The current instance of the singleton class.
@@ -226,10 +212,6 @@ namespace DyrdaIo
                 }
             }
 
-            #endregion
-
-            #region Lifecycle Methods
-
             private void Awake()
             {
                 if (LoadLazy == false)
@@ -271,8 +253,6 @@ namespace DyrdaIo
                     _instanceDestroyed = true;
                 }
             }
-
-            #endregion
         }
     }
 }
