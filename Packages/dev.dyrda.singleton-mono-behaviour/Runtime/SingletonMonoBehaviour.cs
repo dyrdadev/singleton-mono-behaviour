@@ -4,7 +4,7 @@ using UnityEngine;
 
 #endregion
 
-namespace DyrdaIo
+namespace DyrdaDev
 {
     namespace Singleton
     {

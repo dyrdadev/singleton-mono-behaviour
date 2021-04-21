@@ -1,5 +1,5 @@
 ﻿using System;
-using DyrdaIo.Singleton;
+using DyrdaDev.Singleton;
 using UnityEngine;
 
 public class SingletonTestObject_D : SingletonMonoBehaviour<SingletonTestObject_D>
