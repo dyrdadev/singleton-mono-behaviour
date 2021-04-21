@@ -1,6 +1,6 @@
 {
   "name": "dev.dyrda.singleton-mono-behaviour",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "displayName": "Singleton Mono Behaviour",
   "description": "Another Singleton MonoBehaviour implementation for Unity.",
   "unity": "2019.1",
