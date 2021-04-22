@@ -55,12 +55,12 @@ With the ```Singleton-MonoBehaviour``` we work with ```GameObjects``` in the sce
 
 ## Install the Package
 
-You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Simply add a new package with the git-HTTPS URL to the version you want to install in the form ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#{version}```, where ```{version}``` is the actual version of the release you want to install. For example, if you want to install version ```0.0.3``` of this package, you can refer to ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.3```.
+You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Simply add a new package with the git-HTTPS URL to the version you want to install in the form ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#{version}```, where ```{version}``` is the actual version of the release you want to install. For example, if you want to install version ```0.0.5``` of this package, you can refer to ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.3```.
 
 You can do this by using the Package Manager window or the manifest.json directly:
 
 1. **Installing from a Git URL using the Package Manager window.** Open the Package Manager window. Click "+", then "Add package from git URL" and enter the git URL from above. You can find more information [here](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
-2. **Installing from a Git URL using the manifest.json.** You can add a new entry to the manifest.json file in the ``Packages`` folder of your unity project: ```"io.dyrda.singleton.singleton-mono-behaviour": "https://github.com/DyrdaDev/singleton-mono-behaviour.git#upm"```. You can find more information [here](https://docs.unity3d.com/Manual/upm-git.html).
+2. **Installing from a Git URL using the manifest.json.** You can add a new entry to the manifest.json file in the ``Packages`` folder of your unity project: ```"dev.dyrda.singleton.singleton-mono-behaviour": "https://github.com/dyrdadev/singleton-mono-behaviour.git#upm"```. You can find more information [here](https://docs.unity3d.com/Manual/upm-git.html).
 
 ## License
 
