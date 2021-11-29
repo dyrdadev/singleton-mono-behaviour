@@ -10,10 +10,10 @@ This package for Unity provides an implementation of the Singleton pattern for `
 
 ## Quick Start
 
-You have installed this package as described [below](#install-the-package). You have a class that currently inherits from ```MonoBehaviour``` and you want it to be a Singleton. Then follow these steps:
+Install the package as described [below](#install-the-package). Now you may find yourself in the following situation: You have a class that currently inherits from ```MonoBehaviour``` and you want it to be a Singleton. Then follow these steps:
 
-1. **Preparation:** To use the class ```SingletonMonoBehaviour``` in your script, you have to include the "DyrdaDev.Singleton" using directive. At the beginning of your script, insert the following line: ```using DyrdaDev.Singleton;```.
-2. **Implementation of the concrete Singleton:** Open the script of the class which should be a singleton. Change the superclass from which the class in question inherits from ```MonoBehaviour``` to ```SingletonMonoBehaviour<T>```. ```T``` is the type of your original class in question that will be the concrete ```SingletonMonoBehaviour```.
+1. **Preparation:** Open the script of the class which should be a singleton. To use the class ```SingletonMonoBehaviour``` in your script, you have to include the "DyrdaDev.Singleton" using directive. At the beginning of your script, insert the following line: ```using DyrdaDev.Singleton;```.
+2. **Implementation of the concrete Singleton:** Change the superclass from which the class in question inherits from ```MonoBehaviour``` to ```SingletonMonoBehaviour<T>```. ```T``` is the type of your original class in question that will be the concrete ```SingletonMonoBehaviour```.
 3. **Accessing the Singleton from everywhere:** Done. Now you can access the Singleton via the ```Instance``` property of the concrete Singleton class.
 
 **Example:** Here is an example for a ```GameData``` class with a ```Score``` property. The ```GameData``` class is supposed to be a singleton.  The result of the steps as described above looks like this:
