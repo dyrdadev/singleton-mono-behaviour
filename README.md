@@ -98,7 +98,7 @@ This package is licensed under a MIT license. See the [LICENSE](/LICENSE.md) fil
 
 ## Contribute
 
-This project was created by [Daniel Dyrda](https://dyrda.io).
+This project was created by [Daniel Dyrda](https://dyrda.digital).
 
 > Daniel: _If you want to support me and my projects, you can follow me on [github (DyrdaDev)](https://github.com/DyrdaDev) and [twitter (@daniel_dyrda)](https://twitter.com/daniel_dyrda). Just come by and say hello, I would love to hear how you use the project._
 
