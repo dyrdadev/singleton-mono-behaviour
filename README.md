@@ -85,7 +85,7 @@ The solution outputs debug logs whenever something "interesting" happens. The "O
 
 ## Install the Package
 
-You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Simply add a new package with the git-HTTPS URL to the version you want to install in the form ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#{version}```, where ```{version}``` is the actual version of the release you want to install. For example, if you want to install version ```0.0.8``` of this package, you can refer to ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.8```.
+You can install this package with unity's [package manager](https://docs.unity3d.com/Manual/PackagesList.html). Simply add a new package with the git-HTTPS URL to the version you want to install in the form ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#{version}```, where ```{version}``` is the actual version of the release you want to install. For example, if you want to install version ```0.0.10``` of this package, you can refer to ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.10```.
 
 You can do this by using the Package Manager window or the manifest.json directly:
 
