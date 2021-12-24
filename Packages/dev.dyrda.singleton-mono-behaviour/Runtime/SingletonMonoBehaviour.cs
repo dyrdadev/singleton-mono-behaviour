@@ -60,7 +60,7 @@ namespace DyrdaDev
             private static int _preferredInstanceId = -1;
 
             /// <summary>
-            /// Indicator that the instance is destroyed as it is the case on application quit.
+            /// Indicator that the instance is destroyed. This is the case on application quit.
             /// </summary>
             private static bool _instanceDestroyed = false;
 
