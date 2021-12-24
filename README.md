@@ -26,7 +26,7 @@ public class GameData : SingletonMonoBehaviour<GameData>
 {
    public int Score;
    
-   // Remaining implementation of the class.
+   // ...
 }
 ```
 
