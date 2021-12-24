@@ -22,22 +22,22 @@ namespace DyrdaDev
             /// <summary>
             /// If true, we create a new object if there is no instance in the scene.
             /// </summary>
-            public static bool CreateInstanceIfNotPresent = true;
+            protected static bool CreateInstanceIfNotPresent = true;
 
             /// <summary>
             /// If true, we also consider inactive elements in the scene when we search for an instance.
             /// </summary>
-            public static bool ConsiderInactive = false;
+            protected static bool ConsiderInactiveInstances = false;
 
             /// <summary>
             /// If true, we do not destroy the instance on scene loads.
             /// </summary>
-            public static bool PersistOnSceneLoad = true;
+            protected static bool PersistOnSceneLoad = true;
             
             /// <summary>
             /// Mutes the onDestroy Warning.
             /// </summary>
-            public static bool MuteOnDestroyWarning = false;
+            protected static bool MuteOnDestroyWarning = false;
 
             #endregion
 
@@ -142,7 +142,7 @@ namespace DyrdaDev
                         // Make the instance persistent.
                         DontDestroyOnLoad(_instance.gameObject);
                     }
-
+                  
                     _instantiated = true;
                 }
             }
@@ -153,7 +153,7 @@ namespace DyrdaDev
             private static void InitializeInstance()
             {
                 // Find all [active / active and inactive] instances in the scene.
-                var objects = ConsiderInactive
+                var objects = ConsiderInactiveInstances
                     ? Resources.FindObjectsOfTypeAll(typeof(T))
                     : FindObjectsOfType(typeof(T));
 
@@ -217,7 +217,7 @@ namespace DyrdaDev
                 }
             }
 
-            private void Awake()
+            protected virtual void Awake()
             {
                 if (LoadOnDemand == false)
                 {
@@ -243,7 +243,6 @@ namespace DyrdaDev
             }
 
             protected virtual void OnDestroy()
-
             {
                 if (_instantiated && GetInstanceID() == _instance.GetInstanceID())
                 {
