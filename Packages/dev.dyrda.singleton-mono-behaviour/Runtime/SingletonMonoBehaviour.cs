@@ -50,9 +50,7 @@ namespace DyrdaDev
             private static readonly object InstanceLock = new object();
 
             /// <summary>
-            /// Unity overloads the == operator and it is quite slow. So instead of (instance != null)
-            /// we use a flag for comparison. For further details see the following Unity blog article:
-            /// http://blogs.unity3d.com/2014/05/16/custom-operator-should-we-keep-it/
+            /// We use a flag for comparison to avoid the == operator. (It is slow because Unity overloads the operator.)
             /// </summary>
             private static bool _instantiated = false;
 
