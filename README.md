@@ -18,7 +18,7 @@ Install the package as described [below](#install-the-package). Now you may find
 
 **Example:** Here is an example for a ```GameData``` class with a ```Score``` property. The ```GameData``` class is supposed to be a singleton.  The result of the steps as described above looks like this:
 
-```
+```C#
 using UnityEngine;
 using DyrdaDev.Singleton;
 
