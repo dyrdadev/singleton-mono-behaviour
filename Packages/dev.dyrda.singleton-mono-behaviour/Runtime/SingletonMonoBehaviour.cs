@@ -17,7 +17,7 @@ namespace DyrdaDev
             /// Should we wait with finding the correct instance until a script tries to access it? If set to false,
             /// we load the instance on Awake.
             /// </summary>
-            public static bool LoadLazy = false;
+            public static bool LoadOnDemand = false;
 
             /// <summary>
             /// If true, we create a new object if there is no instance in the scene.
@@ -33,6 +33,11 @@ namespace DyrdaDev
             /// If true, we do not destroy the instance on scene loads.
             /// </summary>
             public static bool PersistOnSceneLoad = true;
+            
+            /// <summary>
+            /// Mutes the onDestroy Warning.
+            /// </summary>
+            public static bool MuteOnDestroyWarning = false;
 
             #endregion
 
@@ -50,7 +55,9 @@ namespace DyrdaDev
             private static readonly object InstanceLock = new object();
 
             /// <summary>
-            /// We use a flag for comparison to avoid the == operator. (It is slow because Unity overloads the operator.)
+            /// Unity overloads the == operator and it is quite slow. So instead of (instance != null)
+            /// we use a flag for comparison. For further details see the following Unity blog article:
+            /// http://blogs.unity3d.com/2014/05/16/custom-operator-should-we-keep-it/
             /// </summary>
             private static bool _instantiated = false;
 
@@ -60,7 +67,7 @@ namespace DyrdaDev
             private static int _preferredInstanceId = -1;
 
             /// <summary>
-            /// Indicator that the instance is destroyed. This is the case on application quit.
+            /// Indicator that the instance is destroyed as it is the case on application quit.
             /// </summary>
             private static bool _instanceDestroyed = false;
 
@@ -212,7 +219,7 @@ namespace DyrdaDev
 
             private void Awake()
             {
-                if (LoadLazy == false)
+                if (LoadOnDemand == false)
                 {
                     lock (InstanceLock)
                     {
@@ -243,10 +250,13 @@ namespace DyrdaDev
                     // We are destroying the current instance...
 
                     // ... this should only be the case on application quit.
-                    WarnMessage(
-                        $"Deleting <b>current</b> instance of '{typeof(T)}' attached to '{_instance.name}'. This " +
-                        $"should only be the case on application quit.");
-
+                    if (MuteOnDestroyWarning == false)
+                    {
+                        WarnMessage(
+                            $"Deleting <b>current</b> instance of '{typeof(T)}' attached to '{_instance.name}'. This " +
+                            $"should only be the case on application quit.");
+                    }
+                    
                     // Prevent recreations.
                     _instanceDestroyed = true;
                 }
