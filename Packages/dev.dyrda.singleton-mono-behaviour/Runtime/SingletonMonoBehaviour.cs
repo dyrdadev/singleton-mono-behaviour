@@ -231,7 +231,7 @@ namespace DyrdaDev
                         }
                         else
                         {
-                            if (_instance == this == false)
+                            if ((_instance == this) == false)
                             {
                                 DestroyInstance(this);
                             }
