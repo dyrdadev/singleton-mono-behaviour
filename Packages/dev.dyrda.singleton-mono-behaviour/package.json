@@ -1,0 +1,37 @@
+{
+  "name": "dev.dyrda.singleton-mono-behaviour",
+  "version": "0.0.7",
+  "displayName": "Singleton Mono Behaviour",
+  "description": "Another Singleton MonoBehaviour implementation for Unity.",
+  "keywords": [
+    "singleton-pattern",
+    "pattern",
+    "utility",
+    "singleton",
+    "singleton-mono-behaviour",
+    "singletonpattern",
+    "game",
+    "indiegame",
+    "gamedev",
+    "indiedev",
+    "game-development",
+    "unity",
+    "unity3d",
+    "madewithunity",
+    "dyrdaio"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DyrdaDev/singleton-mono-behaviour.git"
+  },
+  "homepage": "https://dyrda.io/",
+  "bugs": {
+    "url": "https://github.com/DyrdaDev/singleton-mono-behaviour/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Dyrda",
+    "email": "dyrda.dev@posteo.de",
+    "url": "https://www.dyrda.io"
+  }
+}
