@@ -36,6 +36,16 @@ public class GameData : SingletonMonoBehaviour<GameData>
 
 Now, you can access the ```Score``` property via ```GameData.Instance.Score``` from any script in your project that has access to the ```GameData``` class.
 
+## Install the Package
+
+I recommend **to install this package from a Git URL using the Package Manager window.** This involves the following steps:
+
+1. Open the Package Manager window in your Unity editor (Window ➜ Package Manager)
+2. Click "+" in the upper left corner ➜ "Add package from git URL" 
+3. Enter the Git URL of the latest release: ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.10``` and click "Add"
+
+> You can find more information [here](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
+
 ## Features
 
 Our Singleton implementation offers the following features:
@@ -81,14 +91,6 @@ Every access to the current instance requires some checks. These checks are a bo
 
 #### Logging
 The solution outputs debug logs whenever something "interesting" happens. The "OnDestroy" warning can be muted by setting the ```MuteOnDestroyWarning``` property to true.
-
-## Install the Package
-
-I recommend **to install this package from a Git URL using the Package Manager window.** This involves the following steps:
-
-1. Open the Package Manager window in your Unity editor (Window ➜ Package Manager)
-2. Click "+" in the upper left corner ➜ "Add package from git URL" 
-4. Enter the Git URL of the latest release: ```https://github.com/DyrdaDev/singleton-mono-behaviour.git#0.0.10```. You can find more information [here](https://docs.unity3d.com/Manual/upm-ui-giturl.html).
 
 ## License
 
