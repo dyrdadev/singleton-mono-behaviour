@@ -2,13 +2,13 @@
 
 > Another Singleton ```MonoBehaviour``` implementation for Unity. 
 
-> 🧪 **EXPERIMENTAL** This project is experimental. It is still under development. It may be unstable. It is not optimized and largely untested . Do **not** use this project in critical projects. 
+> 🧪 **EXPERIMENTAL** This project is experimental. It is still under development, so it may be unstable. It is not optimized and is largely untested . Do **not** use this project in critical projects. 
 
-This package for Unity provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances. The package introduces the ```SingletonMonoBehaviour``` class. With this class, we can create concrete ```MonoBehaviour``` components that can be added to game objects in the scene and behave in the same way as classic ```MonoBehaviour``` components – just as a singleton.
+This Unity package provides an implementation of the Singleton pattern for ```MonoBehaviour``` instances. The package introduces the ```SingletonMonoBehaviour``` class. With this class, we can create concrete ```MonoBehaviour``` components that can be added to game objects in the scene and behave in the same way as classic ```MonoBehaviour``` components – just as a singleton.
 
-The class implements the most common features described for ```MonoBehaviour``` singletons, such as persistence, handling of multiple instances, and performance optimizations. Check out the [Features](#features) section for a complete overview of the features.
+The class implements the most common features described for ```MonoBehaviour``` Singletons, such as persistence, handling of multiple instances, and performance optimizations. Check out the [Features](#features) section for a complete overview of the features.
 
-> 💭 **A short comment of Daniel on the Singleton pattern:** At this point we do not want to enter the discussion about whether the Singleton pattern is good or bad. Whether it is more good than bad, or vice versa, depends on the concrete use case. This should be evaluated on a case-by-case basis. So don't get discouraged if somebody says that Singleton is an antipattern. In this radical statement, I do not think this is true. I know many situations in which a Singleton offers a beautiful solution. At the same time, however, it is true that one can easily drift into a suboptimal code structure. So use the pattern very consciously and be aware of the consequences. Be fully aware of what you are doing. If you are unsure, a singleton is likely to lead to suboptimal code. If you are looking for a good alternative to Singletons, **"Dependency Injection"** seems to be a good approach. There are some solutions of "Dependency Injection" available for Unity.
+> 💭 **A short comment of Daniel on the Singleton pattern:** At this point, we do not want to enter the discussion about whether the Singleton pattern is good or bad. Whether it is more good than bad, or vice versa, depends on the concrete use case. This should be evaluated on a case-by-case basis. So don't get discouraged if somebody says that Singleton is an antipattern. In this radical statement, I do not think this is true. I know many situations in which a Singleton offers a beautiful solution. At the same time, however, it is true that one can easily drift into a suboptimal code structure. So use the pattern very consciously and be aware of the consequences. Be fully aware of what you are doing. If you are unsure, a singleton is likely to lead to suboptimal code. If you are looking for a good alternative to Singletons, **"Dependency Injection"** seems to be a good approach. There are some solutions of "Dependency Injection" available for Unity.
 
 If you want to read more about the singleton pattern, check out [Game Programming Patterns - Singleton](http://gameprogrammingpatterns.com/singleton.html) by Robert Nystrom.
 
@@ -38,7 +38,7 @@ Now, you can access the ```Score``` property via ```GameData.Instance.Score``` f
 
 ## Install the Package
 
-I recommend **to install this package from a Git URL using the Package Manager window.** This involves the following steps:
+I recommend **installing this package from a Git URL using the Package Manager window.** This involves the following steps:
 
 1. Open the Package Manager window in your Unity editor (Window ➜ Package Manager)
 2. Click "+" in the upper left corner ➜ "Add package from git URL" 
@@ -51,7 +51,7 @@ I recommend **to install this package from a Git URL using the Package Manager w
 Our Singleton implementation offers the following features:
 
 #### Event Functions
-```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This means, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity event functions such as ```Awake```, ```Start```, ```Update``` or ```FixedUpdate```. Please note: ```Awake``` and ```OnDestroy``` are used by the base singleton class. When using these classes, use the ```overwrite``` keyword and make sure to call the base method. For example:
+```SingletonMonoBehaviour``` inherits from ```MonoBehaviour```. This means, we work with concrete ```MonoBehaviour``` components on objects in the scene – just as a singleton. As a consequence of the inheritance of   ```MonoBehaviour```, the derived classes of ```SingletonMonoBehaviour``` have access to all Unity event functions such as ```Awake```, ```Start```, ```Update``` or ```FixedUpdate```. Please note: ```Awake``` and ```OnDestroy``` are used by the base singleton class. When using these classes, use the ```overwrite``` keyword and make sure to call the base method. For example:
 
 ```C#
 using System;
@@ -75,7 +75,7 @@ We work with real ```MonoBehaviour``` components and ```GameObjects``` – in ot
 We make sure that there is always only one instance of the singleton in the scene. Further instances of a singleton are automatically destroyed.
 
 #### Exactly one Singleton, not less
-There should always be an instance of a Singleton class. Our implementation can automatically create one for you. The ```CreateInstanceIfNotPresent``` property states whether we create a new object if there is no instance in the scene. The defaut value for ```CreateInstanceIfNotPresent``` is ```true```. You can set the static field ```CreateInstanceIfNotPresent``` in the implementation of your concrete ```SingletonMonoBehaviour``` class so that everything behaves according to your requirements.
+There should always be an instance of a Singleton class. Our implementation can automatically create one for you. The ```CreateInstanceIfNotPresent``` property states whether we create a new object if there is no instance in the scene. The default value for ```CreateInstanceIfNotPresent``` is ```true```. You can set the static field ```CreateInstanceIfNotPresent``` in the implementation of your concrete ```SingletonMonoBehaviour``` class so that everything behaves according to your requirements.
 
 #### Inactive Singletons
 When looking for instances in the scene, we can include inactive objects or ignore them. If the ```ConsiderInactiveInstances``` property is ```true```, we also consider inactive instances in the scene when we search for an instance. The default value for ```ConsiderInactiveInstances``` is ```false```. You can set the static field ```ConsiderInactiveInstances``` in the implementation of your concrete ```SingletonMonoBehaviour``` class so that everything behaves according to your requirements.
@@ -100,7 +100,7 @@ This package is licensed under an MIT license. See the [LICENSE](/LICENSE.md) fi
 
 This project was created by [Daniel Dyrda](https://dyrda.page).
 
-> Daniel: _If you want to support me and my projects, you can follow me on [github (DyrdaDev)](https://github.com/DyrdaDev) and [twitter (@daniel_dyrda)](https://twitter.com/daniel_dyrda). Just come by and say hello, I would love to hear how you are using the project._
+> Daniel: _If you want to support me and my projects, you can follow me on [GitHub (DyrdaDev)](https://github.com/DyrdaDev) and [Twitter (@daniel_dyrda)](https://twitter.com/daniel_dyrda). Just come by and say hello, I would love to hear how you are using the project._
 
-If you want to contribute to this project, you are welcome to do so. Just write me and we will find a way to collaborate.
+If you want to contribute to this project, you are welcome to do so. Just write to me and we will find a way to collaborate.
  
